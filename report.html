@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>八字報告 · 虹靈御所</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/report.css" />
+</head>
+<body>
+  <div class="container-xl section reveal">
+  <section class="section reveal">
+    <div class="report-actions" style="display:flex;gap:10px;margin:.5rem 0 1rem;">
+      <button class="btn btn-primary hover-lift" onclick="window.print()">導出 PDF</button>
+      <a class="btn btn-ghost" href="index.html">回首頁</a>
+    </div>
+    <h1 class="title-gradient underline-rainbow" style="margin-bottom:.4rem;">《八字人生兵法》報告</h1>
+    <p style="opacity:.85">這不是「命運判決書」。這是你的「行動戰術書」。</p>
+  </section>
+
+  <div class="report-wrapper">
+    <header class="report-header">
+      <h1 class="report-title">你的八字人生兵法報告</h1>
+      <p class="report-tone">語氣風格：<span id="tone-display"></span></p>
+    </header>
+
+    <section id="report-body" class="report-body">
+      <!-- API 回傳的 HTML 報告內容將插入此處 -->
+    </section>
+
+    <footer class="report-buttons">
+      <button onclick="window.print()">🖨️ 列印報告</button>
+      <button onclick="downloadReport()">💾 儲存報告</button>
+      <button onclick="shareReport()">📤 分享報告</button>
+    </footer>
+  </div>
+
+  <script src="js/report.js"></script>
+</div>
+
+  <section class="section reveal">
+    <div class="cool-card rainbow-ring" style="padding:20px">
+      <h2 class="title-gradient">能量分佈</h2>
+      <div class="divider"></div>
+      <div id="energy-section" class="energy-bars"></div>
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+/* 顏色與能量場切換樣式 */
+
+/* 主題色調 */
+:root {
+  --primary-gradient: linear-gradient(to right, #ff6ec4, #7873f5);
+  --secondary-gradient: linear-gradient(to bottom, #1a1a2e, #0f0f1a);
+  --accent-color: #ff6ec4;
+  --text-light: #ccc;
+  --text-lighter: #aaa;
+  --bg-dark: #0f0f1a;
+  --bg-darker: #1a1a2e;
+}
+
+/* 能量場主題切換 */
+.theme-fire {
+  --primary-gradient: linear-gradient(to right, #ff4757, #ff3742);
+  --accent-color: #ff4757;
+}
+
+.theme-water {
+  --primary-gradient: linear-gradient(to right, #70a1ff, #5352ed);
+  --accent-color: #70a1ff;
+}
+
+.theme-earth {
+  --primary-gradient: linear-gradient(to right, #f0932b, #eb4d4b);
+  --accent-color: #f0932b;
+}
+
+.theme-metal {
+  --primary-gradient: linear-gradient(to right, #ddd, #aaa);
+  --accent-color: #ddd;
+}
+
+.theme-wood {
+  --primary-gradient: linear-gradient(to right, #6ab04c, #218c74);
+  --accent-color: #6ab04c;
+}
+
+/* 動態背景效果 */
+.energy-field {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(circle at center, rgba(255,110,196,0.1) 0%, transparent 70%);
+  animation: energyPulse 4s ease-in-out infinite;
+}
+
+@keyframes energyPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+/* 五行切換動畫 */
+.element-transition {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === Rainbow Sanctuary Deluxe Theme Pack v1 === */
+
+/* Brand tokens */
+:root {
+  --brand-deep: #0b1020;
+  --brand-bg: radial-gradient(1200px 800px at 20% -10%, rgba(61,90,254,.12), rgba(61,90,254,0) 45%),
+              radial-gradient(1000px 700px at 110% 10%, rgba(255,64,129,.12), rgba(255,64,129,0) 40%),
+              linear-gradient(180deg, #0b1020 0%, #0b0f1a 100%);
+  --glass: rgba(255,255,255,.06);
+  --glass-strong: rgba(255,255,255,.12);
+  --blur: 16px;
+
+  --ring: conic-gradient(from 90deg, #ff6ec7, #6a5cff, #2dd4bf, #fcd34d, #ff6ec7);
+  --rainbow: linear-gradient(90deg, #ff6ec7, #f97316, #f59e0b, #22c55e, #06b6d4, #6366f1, #a855f7);
+  --text-gradient: linear-gradient(90deg, #e9d5ff, #c7d2fe, #93c5fd, #a5f3fc, #fbcfe8);
+}
+
+/* Background upgrade */
+body.coolified {
+  background: var(--brand-bg);
+  color: #e6ecff;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Glass card */
+.cool-card {
+  background: var(--glass);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+/* Neon ring border */
+.rainbow-ring {
+  position: relative;
+  border-radius: 22px;
+  isolation: isolate;
+}
+.rainbow-ring::before {
+  content: "";
+  position: absolute; inset: -1px;
+  border-radius: 24px;
+  padding: 1px;
+  background: var(--ring);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  animation: spin 10s linear infinite;
+  z-index: -1;
+}
+@keyframes spin { to{ transform: rotate(360deg);} }
+
+/* Headline gradient text */
+.title-gradient {
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .85rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  box-shadow: 0 8px 30px rgba(0,0,0,.25);
+  transition: transform .15s ease, box-shadow .2s ease, border-color .2s ease;
+  cursor: pointer;
+}
+.btn:hover { transform: translateY(-1px); border-color: rgba(255,255,255,.35); }
+.btn:active { transform: translateY(0); }
+
+.btn-primary { background-image: var(--rainbow); color: #0b1020; font-weight: 700; border: none; }
+.btn-ghost { background: rgba(255,255,255,.04); color: #e6ecff; }
+
+/* Subtle dividers */
+.divider {
+  height: 1px; width: 100%;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.22) 50%, rgba(255,255,255,0) 100%);
+  margin: 1.2rem 0;
+}
+
+/* In-view animations */
+.reveal { opacity: 0; transform: translateY(12px); transition: all .8s cubic-bezier(.2,.8,.2,1); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* Card hover lift */
+.hover-lift { transition: transform .2s ease, box-shadow .3s ease; }
+.hover-lift:hover { transform: translateY(-4px); box-shadow: 0 14px 50px rgba(0,0,0,.45); }
+
+/* Fancy list bullets */
+.ul-fancy { list-style: none; padding: 0; margin: 0; }
+.ul-fancy li { padding-left: 1.4rem; position: relative; margin: .4rem 0; }
+.ul-fancy li::before {
+  content: "";
+  position: absolute; left: 0; top: .55rem;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--ring);
+  animation: spin 6s linear infinite;
+}

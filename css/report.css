@@ -1,0 +1,79 @@
+.report-wrapper {
+  padding: 2rem;
+  background: linear-gradient(to bottom, #1a1a2e, #0f0f1a);
+  color: white;
+  font-family: 'Noto Serif TC', serif;
+  min-height: 100vh;
+}
+
+.report-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.report-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #ff6ec4, #7873f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.report-tone {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.report-body {
+  margin-top: 2rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.report-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.report-buttons button {
+  background: linear-gradient(to right, #ff6ec4, #7873f5);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+  transition: transform 0.3s ease;
+}
+
+.report-buttons button:hover {
+  transform: scale(1.05);
+}
+
+
+/* === Print & PDF Export Styles === */
+@media print {
+  @page { size: A4; margin: 16mm 14mm; }
+  html, body { background: #fff !important; color: #111 !important; }
+  .cool-card, .rainbow-ring { box-shadow: none !important; border: 1px solid #ddd !important; background: #fff !important; }
+  .btn, nav, footer, .report-actions, canvas#particles-bg { display: none !important; }
+  .title-gradient { color: #111 !important; background: none !important; -webkit-text-fill-color: #111 !important; }
+  .divider { background: #ccc !important; }
+  .report-section { break-inside: avoid; page-break-inside: avoid; }
+  .page-break { break-after: page; page-break-after: always; }
+}
+/* Energy bars */
+.energy-bars { display:grid; gap:12px; }
+.energy-row { display:flex; align-items:center; gap:12px; }
+.energy-label { width:3.5rem; text-align:right; opacity:.85; font-size:.9rem; }
+.energy-track { flex:1; height:10px; border-radius:999px; background: rgba(255,255,255,.12); overflow:hidden; }
+.energy-fill { height:100%; width:0; border-radius:999px; background: var(--rainbow); transition: width .8s ease; }
+.energy-badges { display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
+.energy-badge { padding:.2rem .5rem; border-radius:999px; font-size:.8rem; border:1px solid rgba(255,255,255,.2); background: rgba(255,255,255,.06); }
