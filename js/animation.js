@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 語音開場（可選）
   const audio = document.getElementById("welcome-audio");
-  if (audio) audio.play();
+  if (audio) audio.play().catch(() => {});
 });
 
 function enterSite() {
