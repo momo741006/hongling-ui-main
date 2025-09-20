@@ -13,12 +13,13 @@
   animation: fadeIn 1s ease-in-out;
 }
 
-#pillars, #narrative {
+#pillars,
+#narrative {
   margin-bottom: 1.5rem;
 }
 
 .card {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 8px;
@@ -37,6 +38,10 @@ canvas#fiveChart {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
