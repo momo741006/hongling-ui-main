@@ -1,16 +1,18 @@
 /* 字體與色彩調性 */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap");
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Noto Serif TC', serif;
+  font-family: "Noto Serif TC", serif;
   background-color: #0f0f1a;
   color: white;
   overflow-x: hidden;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
   font-weight: normal;
 }
@@ -27,7 +29,8 @@ button:hover {
   transform: scale(1.05);
 }
 
-input, select {
+input,
+select {
   font-family: inherit;
   border: none;
   border-radius: 6px;
@@ -38,13 +41,39 @@ input, select {
   margin-bottom: 1rem;
 }
 
-
 /* === Base polish === */
-.container-xl { width: min(1200px, 92vw); margin: 0 auto; }
-h1,h2,h3 { letter-spacing: .3px; }
-.section { padding: 4rem 0; }
-.badge { padding: .25rem .6rem; border-radius: 999px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); font-size: .8rem; }
+.container-xl {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+}
+h1,
+h2,
+h3 {
+  letter-spacing: 0.3px;
+}
+.section {
+  padding: 4rem 0;
+}
+.badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.8rem;
+}
 
 /* Rainbow underline */
-.underline-rainbow { position: relative; display: inline-block; }
-.underline-rainbow::after { content:""; position:absolute; left:0; right:0; bottom:-4px; height:3px; background: var(--rainbow); border-radius: 999px; }
+.underline-rainbow {
+  position: relative;
+  display: inline-block;
+}
+.underline-rainbow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 3px;
+  background: var(--rainbow);
+  border-radius: 999px;
+}
